@@ -1,0 +1,256 @@
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript&plugins=line-numbers */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+ code[class*="language-"],
+ pre[class*="language-"] {
+     color: #f8f8f2;
+     background: none;
+     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+     font-family: "GmarketSans";
+     font-size: 0.9vw;
+     text-align: left;
+     white-space: pre;
+     word-spacing: normal;
+     word-break: normal;
+     word-wrap: normal;
+     line-height: 1.5;
+ 
+     -moz-tab-size: 4;
+     -o-tab-size: 4;
+     tab-size: 4;
+ 
+     -webkit-hyphens: none;
+     -moz-hyphens: none;
+     -ms-hyphens: none;
+     hyphens: none;
+ }
+ 
+ /* Code blocks */
+ pre[class*="language-"] {
+     padding: 1em;
+     margin: 0;
+     overflow: auto;
+     border-radius: 0 0 0.3em 0.3em;
+ }
+ 
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+     background: #202124;
+ }
+ 
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+     padding: .1em;
+     border-radius: .3em;
+     white-space: normal;
+ }
+ 
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+     color: #8292a2;
+ }
+ 
+ .token.punctuation {
+     color: #f8f8f2;
+ }
+ 
+ .token.namespace {
+     opacity: .7;
+ }
+ 
+ .token.property,
+ .token.tag,
+ .token.constant,
+ .token.symbol,
+ .token.deleted {
+     color: #f92672;
+ }
+ 
+ .token.boolean,
+ .token.number {
+     color: #ae81ff;
+ }
+ 
+ .token.selector,
+ .token.attr-name,
+ .token.string,
+ .token.char,
+ .token.builtin,
+ .token.inserted {
+     color: #a6e22e;
+ }
+ 
+ .token.operator,
+ .token.entity,
+ .token.url,
+ .language-css .token.string,
+ .style .token.string,
+ .token.variable {
+     color: #f8f8f2;
+ }
+ 
+ .token.atrule,
+ .token.attr-value,
+ .token.function,
+ .token.class-name {
+     color: #e6db74;
+ }
+ 
+ .token.keyword {
+     color: #66d9ef;
+ }
+ 
+ .token.regex,
+ .token.important {
+     color: #fd971f;
+ }
+ 
+ .token.important,
+ .token.bold {
+     font-weight: bold;
+ }
+ .token.italic {
+     font-style: italic;
+ }
+ 
+ .token.entity {
+     cursor: help;
+ }
+ 
+ pre[class*="language-"].line-numbers {
+     position: relative;
+     padding-left: 3.8em;
+     counter-reset: linenumber;
+     overflow: inherit;
+ }
+ 
+ pre[class*="language-"].line-numbers > code {
+     position: relative;
+     white-space: inherit;
+ }
+ 
+ .line-numbers .line-numbers-rows {
+     position: absolute;
+     pointer-events: none;
+     top: 0;
+     font-size: 100%;
+     left: -3.8em;
+     width: 3em; /* works for line-numbers below 1000 lines */
+     letter-spacing: -1px;
+     border-right: 1px solid #999;
+ 
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+ 
+ }
+ 
+ .line-numbers-rows > span {
+     display: block;
+     counter-increment: linenumber;
+ }
+ 
+ .line-numbers-rows > span:before {
+     content: counter(linenumber);
+     color: #999;
+     display: block;
+     padding-right: 0.8em;
+     text-align: right;
+ }
+ 
+ 
+ /* costom */
+ .code-editor {
+     position: relative;
+     background: #202124;
+     border-radius: 5px;
+     overflow: hidden;
+ } 
+ header#controls {position: relative; font-family: 'GmarketSans';}
+ header#controls .native-header {
+     cursor: default;
+     width: 100%;
+     box-sizing: border-box;
+     display: flex;
+     align-items: center;
+     min-height: 35px;
+     background: #202124;
+     border-radius: 5px 5px 0 0;
+ }
+ header#controls .native-header > div {
+     border-radius: 100%;
+     margin: 1px 1px 0 7px;
+     height: 0.7vw;
+     width: 0.7vw;
+     display: inline-block;
+ }
+ header#controls .native-header .close {background-color: #fb5c52; margin-left: 0.7vw;}
+ header#controls .native-header .minimize {background-color: #fdba26;}
+ header#controls .native-header .expand {background-color: #42c944;}
+ header#controls .controls {
+     min-height: 40px;
+     background: #35363A;
+     color: #fff;
+     width: 100%;
+     user-select: none;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+ }
+ header#controls .controls .address {
+     display: flex;
+     align-items: center;
+     padding-left: 2%;
+     box-sizing: border-box;
+     background: #202124;
+     width: 45vw;
+     height: 27px;
+     border-radius: 15px;
+ }
+ header#controls .controls .tabgroup {display: inline-block;}
+ header#controls .controls .tabgroup a {
+     width: 1.4vw;
+     height: 1.4vw;
+     font-size: .88vw;
+     display: inline-block;
+     color: #86888A;
+     text-align: center;
+     line-height: 28px;
+     cursor: pointer;
+     transition: all 250ms linear;
+ }
+ header#controls .controls .tabgroup a:hover {color: #defaff;}
+ header#controls .controls .tabgroup i {pointer-events: none;}
+ .tabcontrol {
+     min-height: 32px;
+     display: flex;
+     top: 4px;
+     left: 4.4vw;
+     position: absolute;
+     z-index: 5;
+ }
+ .tabcontrol > div[class^="tab"] {
+     min-height: 26px;
+     min-width: 145px;
+     border-radius: 5px 5px 0 0;
+     color: #fff;
+     text-align: center;
+     line-height: 30px;
+     font-size: 14px;
+     font-weight: 200;
+     background: linear-gradient(#222, rgba(0, 0, 0, 0));
+     z-index: 0;
+ }
+ .tabcontrol > div[class^="tab"].active {background: #35363A; z-index: 1;}
+ /* scrollbar */
+ .code-content::-webkit-scrollbar {width: 10px; height: 10px;}
+ .code-content::-webkit-scrollbar-track-piece {background-color: #282C34;}
+ .code-content::-webkit-scrollbar-thumb {border-radius: 5px; background-color: rgb(19, 17, 17);}
+ .code-content::-webkit-scrollbar-corner {background-color: #282C34;}

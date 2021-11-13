@@ -1,3 +1,9 @@
+
+:root {
+    --display: block;
+    --color:black;
+}
+
 body {
     font-family: 'GmarketSans';
 }
@@ -22,6 +28,7 @@ header {
     top: 0;
     width: 100%;
     height: 5vh;
+    z-index: 99999;
 }
 header .header-wrap{
     width: 96%;
@@ -33,6 +40,7 @@ header .header-wrap{
     animation: makeline 4s cubic-bezier(0.02, 0.01, 0.21, 1);
 }
 header .header-wrap::before{
+    display: var(--display);
     content: '';
     left: 3%;
     top: 55vh;
@@ -61,7 +69,7 @@ header .header-wrap .header-logo .header-text::before{
     left: 0;
     top: 6%;
     position: absolute;
-    background: #000;
+    background: var(--color);;
 }
 
 header .header-wrap .header-logo .header-text{
@@ -169,17 +177,23 @@ header .header-wrap .header-font{
 #contents >div {
     position: relative;
     height: 100%;
+    background: #fff;
 }
 
 #section1 {
     width: 100%;
-    max-height: 90%;
-    height: 12000px;
-    background: #F1F1F1;
+    height: 11000px;
+}
+#section2 {
+    width: 100%;
+    height: 20000px;
+    background: #000;
 }
 #section1 .s1-text-box1 {
     height: 100vh;
     width: 100%;
+    background: #F1F1F1;
+    z-index: 9000;
 }
 /* 이미지 */
 #section1 .s1-text-box1 svg{
@@ -550,7 +564,7 @@ header .header-wrap .header-font{
     position: absolute;
     left: 150%;
     top: 50%;
-    width: 350px;
+    width: 500px;
     text-align: justify;
     text-transform: uppercase;
 }
@@ -566,7 +580,7 @@ header .header-wrap .header-font{
     position: absolute;
     left: 270%;
     top: 50%;
-    width: 350px;
+    width: 400px;
     text-align: justify;
     text-transform: uppercase;
 }
@@ -597,7 +611,7 @@ header .header-wrap .header-font{
     position: absolute;
     left: 100%;
     top: 50%;
-    width: 500px;
+    width: 700px;
     text-align: justify;
     text-transform: uppercase;
 }
@@ -607,33 +621,34 @@ header .header-wrap .header-font{
     top: 45%;
     transform: rotate(-90deg);
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 3vh;
 }
 #section1 .s1-text-box1 .s1-desc.desc10{
     position: absolute;
     left: 100%;
     top: 50%;
-    width: 30%;
+    width: 30vh;
 }
 #section1 .s1-text-box1 .s1-desc.desc10 ul{
-    padding: 25px;
+    padding: 1vh;
 }
 #section1 .s1-text-box1 .s1-desc.desc10 ul li.title{
-    font-size: 20px;
+    font-size: 2vh;
     font-weight: bold;
-    margin: 20px 0 30px 0;
+    margin: 2vh 0 3vh 0;
 }
 #section1 .s1-text-box1 .s1-desc.desc10 ul li{
-    margin: 10px 0;
+    margin: 2vh 0;
     position: relative;
+    font-size: 1vh;
 }
 #section1 .s1-text-box1 .s1-desc.desc10 ul li div{
-    width: 10px;
-    height: 10px;
+    width: 1vh;
+    height: 1vh;
     background: #000;
     position: absolute;
-    left: 150px;
-    top: 4px;
+    left: 40%;
+    top: 15%;
 }
 /* 세번째라인텍스트 */
 #section1 .s1-text-box1 .block{
@@ -672,7 +687,8 @@ header .header-wrap .header-font{
         font-size: 30vmin;
     }
     #section1 .s1-text-box1 .block{
-        margin-top: 9vh;    
+        margin-top: 9vh;
+        width: 24vh;    
         height: 24vh;
     }
 
@@ -804,4 +820,292 @@ header .header-wrap .header-font{
     #section1 .s1-text-box1 .s1-text3 span:nth-child(1){
         margin-top: 5vh;
     }
+}
+
+/* section2 */
+#section2 { 
+}
+#section2 .s2-box{
+    height: 100%;
+    width: 100%;
+    color: #fff;
+}
+#section2 .s2-box .s2-main{
+    width: 96%;
+    height: 100%;
+    margin: 0 auto;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content .page-change{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 3vh;
+    height: 3vh;
+    background: #f1f1f1;
+    z-index: 10000;
+    display: block;
+}
+#section2 .s2-box .s2-main .s2-title{
+    width: 100%;
+    text-align: center;
+    font-size: 12vw;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 10vh;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap{
+    display: flex;
+    gap: 1vw;
+    justify-content: space-between;
+    padding: 2.5vw 0 1vw;
+    border-top: 1px solid #fff;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap.second{
+    border-top: 0;
+    border-bottom: 1px solid #fff;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content{
+    position: relative;
+    width: 100%;
+    height: 20vw;
+    border: 1px solid #fff;
+    text-align: center;
+    z-index: 0;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap.second .s2-content:last-child{
+    border: 0;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content img{
+    margin: 2.5vw;
+    width: 12vw;
+    height: 12vw; 
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content .s2-content-desc{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    margin: 1vw 0.5vw 1vw;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content .s2-content-desc .square{
+    flex: 0 0 6%;
+    width: 100%;
+    margin-left: 1vw;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content .s2-content-desc .square > span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content .s2-content-desc .name{
+    flex: 0 0 75%;
+    text-align: left;
+    line-height: 1.2;
+}
+#section2 .s2-box .s2-main .s2-contents-wrap .s2-content .s2-content-desc .num{
+    flex: 0 0 4%;
+    line-height: 1.2;
+}
+/* 섹션2 박스2 */
+#section2 .s2-box2{
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: #f1f1f1;
+    margin-top: 5vh;
+}
+#section2 .s2-box2 .s2-main{
+    width: 96%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+#section2 .s2-box2 .s2-main .box-slide{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5vw;
+    transform: translateY(0%);
+}
+#section2 .s2-box2 .s2-main .box-slide > div{
+    width: 30%;
+    height: 100vh;
+    border: 1px solid #000;
+}
+/* 섹션2 박스2 */
+/* 섹션2 박스3 */
+#section2 .s2-box3{
+    width: 100%;
+    height: 100vh;
+    margin-top: 5vh;
+    overflow: hidden;
+}
+
+.s2-content-wrap{
+    width: 96%;
+    height: 100vh;
+    color: #000;
+    font-size: 0.8vw;
+    font-weight: lighter;
+    margin: 0 auto;
+}
+
+.s2-content-wrap .s2-content-title{
+    width: 100%;
+    font-size: 9vw;
+    font-weight: 300;
+    line-height: 1.4;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+}
+.s2-content-wrap .s2-content-title >div{}
+
+.s2-content-wrap .content-header{
+    display: flex;
+    gap:0.5vw;
+    justify-content: center;
+    margin: 5vh 0 5vh;
+}
+.s2-content-wrap .content-header .content-haeder-title{
+    flex: 0 0 40%;
+    width: 100%;
+    text-align: right;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.s2-content-wrap .content-header .content-haeder-desc{
+    flex: 0 0 60%;
+}
+.s2-content-wrap .content-header .content-haeder-desc span{
+    display: block;
+    width: 50%;
+    text-align: justify;
+}
+.s2-content-wrap .content-section{
+    display: flex;
+    gap:1vh;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.s2-content-wrap .content-section .content-section-info{
+    flex: 0 0 40%;
+}
+.s2-content-wrap .content-section .content-section-info .top{
+    height: 10vw;
+
+}
+.s2-content-wrap .content-section .content-section-info .top > div{
+    display: flex;
+    gap: 3.5vw;
+    margin-bottom: 0.5vw;
+}
+.s2-content-wrap .content-section .content-section-info .top > div span{
+    display: block;
+}
+.s2-content-wrap .content-section .content-section-info .top > div span:nth-child(1){
+    flex: 0 0 30%;
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.s2-content-wrap .content-section .content-section-info .top .title{
+    border-top: 1px solid #000;
+    padding: 1vh 0;
+    position: relative;
+}
+.s2-content-wrap .content-section .content-section-info .top .title::after{
+    content: '';
+    position: absolute;
+    left: 1%;
+    top: 30%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000;
+}
+.s2-content-wrap .content-section .content-section-info .top .title >span{
+    text-decoration: none !important;
+    text-align: left;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+.s2-content-wrap .content-section .content-section-info .top .date{
+    
+}
+.s2-content-wrap .content-section .content-section-info .top .writer{}
+.s2-content-wrap .content-section .content-section-info .top .time{}
+.s2-content-wrap .content-section .content-section-info .bottom{
+}
+.s2-content-wrap .content-section .content-section-info .bottom > div{
+    border-top: 1px solid #000;
+    padding: 1vw 0 0.5vw;
+    display: flex;
+    gap: 3.5vw;
+    margin-bottom: 0.5vw;
+}
+.s2-content-wrap .content-section .content-section-info .bottom > div:last-child{
+    border-bottom: 1px solid #000;
+    padding-bottom: 1vw;
+}
+.s2-content-wrap .content-section .content-section-info .bottom > div span{
+    display: block;
+}
+.s2-content-wrap .content-section .content-section-info .bottom > div span:nth-child(1){
+    flex: 0 0 30%;
+    display: block;
+    text-align: right;
+    font-weight: bold;
+}
+.s2-content-wrap .content-section .nn{
+    flex: 0 0 60%;
+    width: 100%;
+    height: 35vw;
+    overflow: hidden;
+    position: relative;
+}
+.s2-content-wrap .content-section .content-section-img{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+.s2-content-wrap .content-section .view{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12vw;
+    height: 12vw;
+    transform: translate(-51%, -50%) scale(0);
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 50%;
+    z-index: 1;
+}
+.s2-content-wrap .content-section .view span{
+    display: block;
+    font-size: 2vw;
+    color: #fff;
+    padding: 4.5vw 3.5vw;
+}
+.s2-content-wrap .content-section .content-section-img .inside{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 41%;
+    transform: translate(-51%, -84%);
+
+}
+
+/* 섹션2 박스3 */
+/* 섹션2 박스4 */
+#section2 .s2-box4{
+    width: 100%;
+    height: 100vh;
+    margin-top: 5vh;
+    overflow: hidden;
 }
