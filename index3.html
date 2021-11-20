@@ -250,14 +250,17 @@
                             <div class="page-change"></div>
                             <img src="assets/img/ReactSite.jpg" alt="이미지"
                             >
-                            <div class="s2-content-desc">
+                            <div class="s2-content-desc"
+                            >
                                 <span class="square"><span></span></span>
                                 <span class="name"
                                 >REACT SITE</span>
                                 <span class="num">01</span>
                             </div>
                         </div>
-                        <div class="s2-content">   
+                        <div class="s2-content"
+
+                        >   
                             <div class="page-change"></div>
                             <img src="assets/img/테스트6.jpg" alt="이미지">
                             <div class="s2-content-desc">
@@ -509,7 +512,41 @@
         })
         
 
+        {
+            TweenLite.defaultEase = Power2.easeInOut;
+            var activeSlide = 0;
+            var oldSlide = 0;
+            var slides = document.querySelectorAll(".s2-content");
+            var tl;
 
+            function slideAnim(e) { 
+            // if the container is animating the wheel won't work
+            if (tl && tl.isActive()) {
+                return;
+            }
+            // temp variable to see if we're at the beginning or end
+            oldSlide = activeSlide;
+            // which way did we scroll the mousewheel
+            activeSlide = e.deltaY > 0 ? (activeSlide += 1) : (activeSlide -= 1);
+            // are we at the beginning of the slides?
+            activeSlide = activeSlide < 0 ? 0 : activeSlide;
+            // are we at the end of the slides?
+            activeSlide = activeSlide > slides.length - 1 ? slides.length - 1 : activeSlide;
+            // if at the beginning or end there is nothing to animate
+            if (oldSlide === activeSlide) {
+                return;
+            }
+            // if not at the beginning or end, we can animate the container 
+            // and the targets to the new position
+            tl = new TimelineMax();
+            tl.to(".s2-content", 0.25, { scale: 0.5 });
+            tl.to(".s2-contents-wrap", 0.4, { x: -500 * activeSlide });
+            tl.to(".s2-content", 0.25, { scale: 1 });
+            }
+
+            // listen for mousewheel scroll
+            // window.addEventListener("wheel", slideAnim);
+        }
     </script>
 </body>
 </html>

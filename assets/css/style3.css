@@ -566,6 +566,7 @@ body {background: #f5f5f5;}
     position: relative;
 }
 .sec2 .bom .s2-contents-wrap .s2-content {
+    position: relative;
     flex: 0 0 33.3vh;
     margin: 6vh 0;
     height: 33.3vh;
