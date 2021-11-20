@@ -1,0 +1,415 @@
+/* contents */
+body {background: #f5f5f5;}
+.scroll {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    background: rgba(253, 220, 220, 0.3);
+    border-radius: 50%;
+    z-index: 10000;
+}
+#contents {}
+#section1 {
+    height: 7500px;
+}
+#section2 {
+    height: 6000px;
+    background: #333;
+}
+#section3 {}
+#section4 {}
+#section5 {}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+#header .logo {
+    font-family: 'GmarketSans';
+    font-size: 2vh;
+    line-height: 1.4;
+    padding-top: 2px;
+    padding-left: 3.2vh;
+}
+#header .menu {
+    font-family: 'GmarketSans';
+    font-size: 2.2vh;
+    line-height: 1.4;
+    font-weight: 300;
+    padding-top: 2px;
+}
+#header .contact {
+    font-family: 'GmarketSans';
+    font-size: 2vh;
+    line-height: 1.4;
+    padding-top: 2px;
+    padding-right: 3.2vh;
+}
+
+@media (max-width: 800px){
+    #header .menu {display: none;}
+    #header .contact {display: none;}
+}
+
+
+/* sec1 */
+.sec1 {
+    height: 100vh;
+    overflow: hidden;
+}
+.sec1 .top {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 5vh;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    font-family: 'GmarketSans';
+}
+.sec1 .top::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    width: 3.2vh;
+    height: 50vh;
+    background: #f5f5f5;
+    z-index: 3000;
+}
+.sec1 .top::after {
+    content: '';
+    position: fixed;
+    right: 0;
+    top: 5vh;
+    width: 3.2vh;
+    height: 50vh;
+    background: #f5f5f5;
+    z-index: 3000;
+}
+.sec1 .top .line1 {
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+.sec1 .top .line2 {
+    position: fixed;
+    left: 0;
+    bottom: 45vh;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+.sec1 .top .vline1 {
+    position: absolute;
+    left: 100vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline2 {
+    position: absolute;
+    left: 140vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline3 {
+    position: absolute;
+    left: 225vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+
+.sec1 .top .vline4 {
+    position: absolute;
+    left: 227vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline5 {
+    position: absolute;
+    left: 305vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline6 {
+    position: absolute;
+    left: 420vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+
+.sec1 .top .vline7 {
+    position: absolute;
+    left: 422vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline8 {
+    position: absolute;
+    left: 465vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline9 {
+    position: absolute;
+    left: 755vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .text1 {
+    position: absolute;
+    left: 3.2vh;
+    top: 39vh;
+    font-size: 3vh;
+    white-space: nowrap;
+}
+
+.sec1 .top .text1 strong {
+    display: block;
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    overflow: hidden;
+}
+.sec1 .top .text1 em {
+    display: block;
+    font-weight: 700;
+    font-family: 'GmarketSans';
+    overflow: hidden;
+}
+.sec1 .top .text1 span {
+    display: inline-block;
+    min-width: 7px;
+}
+
+.sec1 .top .text2 {
+    position: absolute;
+    left: 205vh;
+    top: 37vh;
+    font-size:2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+
+.sec1 .top .text3 {
+    position: absolute;
+    left: 230vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+
+.sec1 .top .text4 {
+    position: absolute;
+    left: 298vh;
+    top: 34vh;
+    font-size: 2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+.sec1 .top .text5 {
+    position: absolute;
+    left: 309vh;
+    width: 60vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+
+.sec1 .top .text6 {
+    position: absolute;
+    left: 457vh;
+    top: 32vh;
+    font-size: 2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+
+.sec1 .top .text7 {
+    position: absolute;
+    left: 469vh;
+    width: 60vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+.sec1 .top .text8 {
+    position: absolute;
+    left: 752vh;
+    top: 38vh;
+    font-size: 2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+
+.sec1 .top .text9 {
+    position: absolute;
+    left: 759vh;
+    width: 100vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+
+
+
+.sec1 .top .img1 {
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    left: 160vh;
+    object-fit: cover;
+}
+.sec1 .top .img2 {
+    position: absolute;
+    width: 25vh;
+    height: 50vh;
+    left: 380vh;
+    object-fit: cover;
+}
+.sec1 .top .img3 {
+    position: absolute;
+    width: 70vh;
+    height: 50vh;
+    left: 550vh;
+    object-fit: cover;
+}
+.sec1 .top .img4 {
+    position: absolute;
+    width: 110vh;
+    height: 49.6vh;
+    left: 880vh;
+    top: 0.2vh;
+    object-fit: cover;
+}
+.sec1 .bom {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 50vh;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+}
+.sec1 .bom .box1 {
+    position: fixed;
+    left: 3.2vh;
+    bottom: 6vh;
+    width: 33.3vh; 
+    height: 33.3vh;
+    background: #000;
+}
+.sec1 .bom .text1 {
+    position: absolute;
+    left: 40vh;
+    bottom: 6vh;
+    line-height: 8vh; 
+    padding-top: 4.9vh; 
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec1 .bom .text1 span{
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec1 .bom .text2 {
+    position: absolute;
+    left: 223vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+.sec1 .bom .text2 span:first-child{
+    display: inline-block;
+    width: 33.3vh;
+    height: 2vh;
+    background: #000;
+    margin-right: 10vh;
+    margin-bottom: -3vh;
+}
+.sec1 .bom .text2 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec1 .bom .text3 {
+    position: absolute;
+    left: 460vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+.sec1 .bom .text3 span:first-child {
+    display: inline-block;
+    width: 33.3vh;
+    height: 2vh;
+    background: #000;
+    margin-right: 10vh;
+    margin-bottom: -3vh;
+}
+.sec1 .bom .text3 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec1 .bom .text4 {
+    position: absolute;
+    left: 920vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec1 .bom .text4 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
