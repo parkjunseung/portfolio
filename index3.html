@@ -77,17 +77,17 @@
                     </div>
                     <div class='container container1'>
                         <div class='reveal'>
-                            <img class="img1" src='https://images.unsplash.com/photo-1580215935060-a5adc57c5157?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80'>
+                            <img class="img1" src='assets/img/me2.jpg'>
                         </div>
                     </div>
                     <div class='container container2'>
                         <div class='reveal'>
-                            <img class="img2" src='assets/img/테스트4.jpg'>
+                            <img class="img2" src='assets/img/halloween.jpg'>
                         </div>
                     </div>
                     <div class='container container3'>
                         <div class='reveal'>
-                            <img class="img3" src='assets/img/테스트6.jpg'>
+                            <img class="img3" src='assets/img/japan.jpg'>
                         </div>
                     </div>
                     <div class='container container4'>
@@ -233,10 +233,13 @@
         </section>
         <!-- //section1 -->
         <section id="section2"
+
         >
             <div class="sec2"
                     data-9000="left:100%"
                     data-11000="left:0%"
+                                data-17000="display:block"
+            data-17001="display:none"
                 >
                 <div class="top"
                     data-9000="left:102%"
@@ -348,7 +351,8 @@
                 data-13999="display:none"
                 data-14000="display:block"
                 data-14001="transform: rotate(0deg); width:33.3vh; height:33.3vh; left: 3.2vh;bottom: 5.7vh;"
-                data-16000="transform: rotate(360deg); width:250vh; height :250vh ;left: 0vh;bottom: 0vh;"
+                data-16000="transform: rotate(360deg); width:250vh; height :250vh ;left: 0vh;bottom: 0vh; display:block;"
+                data-17001="display:none;"
                 ></div>
             </div>
 
@@ -360,8 +364,12 @@
             data-16000="left:100%"
             data-17000="left:0%"
             >
+                                <span class="line11"
+                    data-16000="left:100%; top:5vh"
+                    data-17000="left:3vh; top:5vh"
+                    ></span>    
                 <div class="s3-contents-wrap"
-                data-16000="left:200vh; top:5vh"
+                data-16000="left:100%; top:5vh"
                 data-17000="left:3vh; top:5vh"
                 data-18000="left:3vh; top:5vh"
                 data-19000="left:-197vh; top:5vh"
@@ -377,11 +385,9 @@
                 data-29000="left:-1197vh; top:5vh"
                 data-30000="left:-1197vh; top:5vh"
                 data-31000="left:-1397vh; top:5vh"
+                data-33000="left:-1397vh; top:5vh"
+                data-34000="left:-1497vh; top:5vh"
                 >
-                    <span class="line11"
-                    data-16000="left:200vh; top:5vh"
-                    data-17000="left:3vh; top:5vh"
-                    ></span>    
                     <div class="s3-content">
                         <div class="content-header">
                             <div class="content-haeder-title">사이트 소개</div>
@@ -414,7 +420,7 @@
                                     </div>
                                     <div>
                                         <span>DISTRIBUTION</span>
-                                        <span>Github</span>
+                                        <span>firebase</span>
                                     </div>
                                 </div>
                             </div>
@@ -780,7 +786,48 @@
                 </div>
             </div>
         </section><!-- //section3 -->
-        <section id="section4"></section><!-- //section4 -->
+        <section id="section4">
+            <div class="sec4"
+            data-33000="left:100%"
+            data-34000="left:0%"
+            >
+                <span class="line31"
+                data-33000="left:100%"
+                data-34000="left:3vh"
+                ></span>    
+                <div class="s4-content-wrap">
+                    <div class="contact-title">CONTACT</div>
+                    <div class="contact-img">
+                        <img src="assets/img/me.jpg" alt="나">
+                    </div>
+                    <div class="contact-info"
+                    >
+                        <div>
+                            <span>PARK JUNSEUNG</span>
+                            <span>-</span>
+                        </div>
+                        <div>
+                            <img src="assets/img/mail_line.svg" alt="메일">
+                            <span>dpfwl8745@gmail.com</span>
+                        </div>
+                        <div>
+                            <img src="assets/img/phone_fill.svg" alt="폰">
+                            <span>010 - 8888 - 8888</span>
+                        </div>
+                        <div>
+                            <img src="assets/img/github.png" alt="깃헙">
+                            <span>junseungpark.github.io</span>
+                        </div>
+                        <div class="contact-icon">
+                            <img style="cursor:pointer;" src="assets/img/kakaotalk.png" alt="카카오톡"></img>
+                            <img onclick="javascript:newin=window.open('about:blank'); newin.location.href='https://www.facebook.com/junseung.bag';" src="assets/img/facebook.png" alt="페이스북">
+                            <img onclick="javascript:newin=window.open('about:blank'); newin.location.href='https://www.instagram.com/junseungp/';" src="assets/img/instagram.png" alt="인스타">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
     </div>
@@ -959,10 +1006,39 @@
                 }
             });
         };
+        let revealCallback4= (entries, self) => {
+            entries.forEach((entry, index) => {
+                let container = entry.target;
+                let div = document.querySelector(".contact-img img");
+                let title = document.querySelectorAll(".contact-title");
+                let divs = document.querySelectorAll(".contact-info>div");
+                let spans = document.querySelectorAll(".contact-info span");
+                const easeInOut = "power1.in";
+                const revealAnim = gsap.timeline({ ease: Power4.out,
+                });
+
+                if (entry.isIntersecting) {
+                revealAnim.set([div, title, divs, spans], {opacity:0});
+                revealAnim
+                .staggerFromTo(title, 1, {opacity:0, x:100, rotationX:0, ease:Back.easeOut}, {opacity:1, x:0},0.06)
+                .staggerFromTo(divs, 1, {opacity:0, x:100, rotationX:0, ease:Back.easeOut}, {opacity:1, x:0},0.06)
+                .staggerFromTo(spans, 1, {opacity:0, y:100, rotationX:0, ease:Back.easeOut}, {opacity:1, y:0},0.06)
+                .from(div, 1, {
+                    xPercent: 100,
+                    delay: -1,
+                    opacity:1,
+                    duration: 4, 
+                    ease: Power4.out
+                })
+                self.unobserve(entry.target);
+                }
+            });
+        };
         let revealObserver = new IntersectionObserver(revealCallback, options);
         let revealObserver1 = new IntersectionObserver(revealCallback1, options);
         let revealObserver2 = new IntersectionObserver(revealCallback2, options);
         let revealObserver3 = new IntersectionObserver(revealCallback3, options);
+        let revealObserver4 = new IntersectionObserver(revealCallback4, options);
         document.querySelectorAll(".reveal").forEach((reveal) => {
             revealObserver.observe(reveal);
         });
@@ -984,6 +1060,9 @@
         })
         document.querySelectorAll(".content-section-info .bottom span:nth-child(2)").forEach((desc) => {
             revealObserver3.observe(desc);
+        })
+        document.querySelectorAll(".contact-img").forEach((span) => {
+            revealObserver4.observe(span);
         })
     </script>
 </body>
