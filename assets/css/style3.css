@@ -5,7 +5,80 @@
 }
 
 /* contents */
-body {}
+body {
+    height: 100%;
+}
+.loader-wrap{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    z-index: 100000;
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    border: 4px solid #Fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: loader 2s infinite ease;
+    z-index: 100000;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
 .scroll {
     position: fixed;
     right: 0px;
@@ -747,14 +820,33 @@ body {}
     text-transform: uppercase;
     color: #fff;
 }
+.sec2 .top .contact h3 {
+font-size: 4vh;
+margin-bottom: 2vh;
+}
 .sec2 .top .contact ul{
+    width: 100%;
+}
+.sec2 .top .contact ul li{
     display: flex;
+    justify-content: start;
+    margin-bottom: 1vh;
+    border-top: 1px solid #fff;
+    padding: 2vh 0 1vh;
+}
+.sec2 .top .contact ul li:last-child {
+    justify-content: end;
 }
 .sec2 .top .contact ul li img{
-    width: 10vh;
-    height: 10vh;
+    width: 5vh;
+    height: 5vh;
+    margin-right: 3vh;
 }
-
+.sec2 .top .contact ul li span {
+    padding: 1vh 0;
+    display: inline-block;
+    line-height: 3vh;
+}
 .sec2 .top .s2t h3 {
     font-size: 4vh;
 }
@@ -898,6 +990,8 @@ body {}
     font-weight: 900;
     opacity: 0;
     color: #000;
+    cursor: pointer;
+    z-index: 1000;
 }
 .sec2 .bom .text1 {
     position: absolute;
