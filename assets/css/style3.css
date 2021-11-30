@@ -174,7 +174,6 @@ body {
     top: 5vh;
     left: 0;
     right: 0;
-    background: #f5f5f5;
     font-family: 'GmarketSans';
     z-index: 4000;
 }
@@ -481,8 +480,7 @@ body {
     top: 50vh;
     left: 0;
     right: 0;
-    background: #f5f5f5;
-    z-index: 2000;
+    z-index: 4000;
 }
 .sec1 .bom .box1 {
     position: fixed;
@@ -851,6 +849,7 @@ margin-bottom: 2vh;
     font-size: 4vh;
 }
 .sec2 .top .s2t span {
+    display: inline-block;
     font-size: 0.8em;
     text-decoration: underline;
     margin-right: 1vh;
