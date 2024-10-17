@@ -316,13 +316,13 @@
                         <a href="https://parkjunportfolio.netlify.app/" target="_blank">リンク</a>
                     </div>
                     <div class="text5 s2t">
-                        <h3>API SITE</h3>
+                        <h3>FLUTTER</h3>
                         <p class="3"></p>
-                        <span>#JAVASCRIPT</span>
-                        <span>#KAKAO</span>
-                        <span>#FACEBOOK</span>
-                        <span>#GOOGLE</span>
-                        <a href="https://github.com/JunseungPark/APIpage"  target="_blank">コードを見る</a>
+                        <span>#FLUTTER</span>
+                        <span>#ANDROID</span>
+                        <span>#APP</span>
+                        <span>#APPLE</span>
+                        <!-- <a href="https://github.com/parkjunseung/APIpage"  target="_blank">コードを見る</a> -->
                         <a href="https://junseungpark.github.io/APIpage/pages/main.html" target="_blank">リンク</a>
                     </div>
                     <div class="text6 s2t">
@@ -333,8 +333,8 @@
                         <span>#CSS</span>
                         <span>#JQUEY</span>
                         <span>#GITHUB</span>
-                        <a href="https://github.com/JunseungPark/dothome2021/tree/main/site-php"  target="_blank">コードを見る</a>
-                        <a href="http://dpfwl8745.dothome.co.kr/site-php/pages/main.php" target="_blank">リンク</a>
+                        <a href="https://github.com/parkjunseung/ilikesoccer"  target="_blank">コードを見る</a>
+                        <a href="http://dpfwl9393.dothome.co.kr/ilikesoccer/playerfourm/pages/main.php" target="_blank">リンク</a>
                     </div>
                     <div class="text7 s2t">
                         <h3>TEAM PROJECT</h3>
@@ -344,8 +344,8 @@
                         <span>#SQL</span>
                         <span>#FETCTH</span>
                         <span>#FPL API</span>
-                        <a href="https://github.com/JunseungPark/ilikesoccer"  target="_blank">コードを見る</a>
-                        <a href="https://dpfw8745.cafe24.com/playerfourm/pages/mainDesc.php" target="_blank">リンク</a>
+                        <a href="https://github.com/parkjunseung/ilikesoccer"  target="_blank">コードを見る</a>
+                        <a href="http://dpfwl9393.dothome.co.kr/ilikesoccer/playerfourm/pages/mainDesc.php" target="_blank">リンク</a>
                     </div>
                     <div class="text8 s2t">
                         <h3>MEGABOX</h3>
@@ -354,8 +354,8 @@
                         <span>#웹표준</span>
                         <span>#YOUTUBE</span>
                         <span>#MOIVE</span>
-                        <a href="https://github.com/JunseungPark/dothome2021/tree/main/mega" target="_blank">コードを見る</a>
-                        <a href="http://dpfwl8745.dothome.co.kr/mega/index20.html" target="_blank">リンク</a>
+                        <a href="https://github.com/parkjunseung/dothome2021/mega" target="_blank">コードを見る</a>
+                        <a href="https://parkjunseung.github.io/dothome2021/mega/index20.html" target="_blank">リンク</a>
                     </div>
 
                     <div class="contact s2t">
@@ -371,7 +371,7 @@
                             </li>
                             <li>
                                 <img src="assets/img/github.png" alt="깃헙">
-                                <span>junseungpark.github.io</span>
+                                <span>parkjunseung.github.io</span>
                             </li>
                             <li class="contact-icon">
                                 <img onclick="javascript:newin=window.open('about:blank'); newin.location.href='https://www.facebook.com/junseung.bag';" src="assets/img/facebook.png" alt="페이스북">
@@ -803,16 +803,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/Draggable.min.js"></script>
-    
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <script>
 
-        // js
-        function setScreenSize() {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        setScreenSize();
-        window.addEventListener('resize', setScreenSize);
+        // 모바일 웹 주소창 숨기기
+        window.addEventListener('load', function() {
+        // body의 height를 살짝 늘리는 코드
+        document.body.style.height = (document.documentElement.clientHeight + 5) + 'px';
+        // scroll를 제어 하는 코드
+        setTimeout(scrollTo, 0, 0, 1);
+        }, false);
 
         var isJp = false;
         let allowed = false;
