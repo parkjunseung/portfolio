@@ -9,11 +9,53 @@
         <link rel="stylesheet" href="assets/css/style3.css">
     </head>
 <body>
+    <div id="landscapeWarning">세로 모드에서는 사용이 제한됩니다. <br>縦向きモードでは使用できません。<br>기기를 가로로 돌려주세요.<br>デバイスを横にしてください。</div>
     <iframe id="fullscreenIframe" src="https://parkjunseung.github.io/portfolio/index4.html"></iframe>
 </body>
 </html>
 
+
+<script>
+  function checkOrientation() {
+    const warning = document.getElementById('landscapeWarning');
+    const fullscreenIframe = document.getElementById('fullscreenIframe');
+    if (window.innerHeight < window.innerWidth) {
+      // 세로 모드일 때 경고 숨김
+      warning.style.display = 'none';
+      fullscreenIframe.style.display = 'block';
+    } else {
+      // 가로 모드인 경우 경고 표시
+      warning.style.display = 'block';
+      fullscreenIframe.style.display = 'none';
+
+    }
+  }
+
+  // 화면 회전 또는 창 크기 변경 감지
+  window.addEventListener('resize', checkOrientation);
+  window.addEventListener('orientationchange', checkOrientation);
+
+  // 페이지 로드 시 초기 상태 확인
+  checkOrientation();
+</script>
+
 <style>
+
+    /* 가로 모드일 때 경고 메시지 */
+    #landscapeWarning {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      padding-top: 40vh;
+      z-index: 9999;
+    }
     /* 페이지 전체에 걸쳐 iframe이 보이도록 설정 */
     html, body {
       margin: 0;
@@ -26,6 +68,7 @@
       width: 100%;
       height: 100%;
       border: none; /* iframe 경계선 제거 */
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
