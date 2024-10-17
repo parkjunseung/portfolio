@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Document</title>
-
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style3.css">
-
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div class="loader-wrap"><span class="loader"><span class="loader-inner"></span></span></div>
@@ -803,17 +804,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/Draggable.min.js"></script>
-    <meta name="apple-mobile-web-app-capable" content="yes">
+
     <script>
 
         // 모바일 웹 주소창 숨기기
-        window.addEventListener('load', function() {
-        // body의 height를 살짝 늘리는 코드
-        document.body.style.height = (document.documentElement.clientHeight + 5) + 'px';
-        // scroll를 제어 하는 코드
-        setTimeout(scrollTo, 0, 0, 1);
-        }, false);
-
+        
         var isJp = false;
         let allowed = false;
         const textBox= [

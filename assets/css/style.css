@@ -2,13 +2,11 @@
 :root {
     --display: block;
     --color:black;
-    --vh: 100%;
 }
 
 body {
     font-family: 'GmarketSans';
-    height: 100vh;
-    height: var(--vh);
+
 }
 
 .scroll {
