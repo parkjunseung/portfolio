@@ -13,10 +13,10 @@
     <div id="banner">
       <div style="display: flex; flex-direction: column; width: 100%;">
         <div class="square01">
-          <img id=backButton class="back-button child" style="width: 50px; height: 50px;" src="/assets/img/home.png" alt="">
+          <img id=backButton class="back-button child" style="width: 50px; height: 50px;" src="assets/img/home.png" alt="">
         </div>
         <div class="square01">
-          <img id=scrollButton class="scroll-button child2" style="width: 70px; height: 70px; display: block;" src="/assets/img/play.png" alt="">
+          <img id=scrollButton class="scroll-button child2" style="width: 70px; height: 70px; display: block;" src="assets/img/play.png" alt="">
         </div>
         <div class="square01">
         </div>
@@ -73,7 +73,7 @@
     if (!isScrolling) {
       scrollInterval = setInterval(autoScrollIframe, 10); // 10ms 간격으로 스크롤
       isScrolling = true;
-      document.getElementById('scrollButton').src = "/assets/img/stop.png"
+      document.getElementById('scrollButton').src = "assets/img/stop.png"
     } else {
       stopScrolling();
     }
@@ -82,7 +82,7 @@
   function stopScrolling() {
     clearInterval(scrollInterval);
     isScrolling = false;
-    document.getElementById('scrollButton').src = '/assets/img/play.png';
+    document.getElementById('scrollButton').src = 'assets/img/play.png';
   }
   function resetScroll() {
     fullscreenIframe.contentWindow.scrollTo(0, 0); // 스크롤을 처음 위치로 이동
