@@ -10,7 +10,22 @@
     </head>
 <body>
     <div id="landscapeWarning">세로 모드에서는 사용이 제한됩니다. <br>縦向きモードでは使用できません。<br>기기를 가로로 돌려주세요.<br>デバイスを横にしてください。</div>
-    <iframe id="fullscreenIframe" src="https://parkjunseung.github.io/portfolio/index4.html"></iframe>
+    <div id="banner">
+      <div style="display: flex; flex-direction: column; width: 100%;">
+        <div class="square01">
+          <img id=backButton class="back-button child" style="width: 50px; height: 50px;" src="/assets/img/home.png" alt="">
+        </div>
+        <div class="square01">
+          <img id=scrollButton class="scroll-button child2" style="width: 70px; height: 70px; display: block;" src="/assets/img/play.png" alt="">
+        </div>
+        <div class="square01">
+        </div>
+        <div class="square01">
+  
+        </div>
+      </div>
+      <iframe style="margin-left: 12%;" id="fullscreenIframe" src="https://parkjunseung.github.io/portfolio/index4.html"></iframe>
+    </div>
 </body>
 </html>
 
@@ -19,15 +34,17 @@
   function checkOrientation() {
     const warning = document.getElementById('landscapeWarning');
     const fullscreenIframe = document.getElementById('fullscreenIframe');
+    const banner = document.getElementById('banner');
     if (window.innerHeight < window.innerWidth) {
       // 세로 모드일 때 경고 숨김
       warning.style.display = 'none';
       fullscreenIframe.style.display = 'block';
+      banner.style.display = 'block';
     } else {
       // 가로 모드인 경우 경고 표시
       warning.style.display = 'block';
       fullscreenIframe.style.display = 'none';
-
+      banner.style.display = 'none';
     }
   }
 
@@ -37,10 +54,47 @@
 
   // 페이지 로드 시 초기 상태 확인
   checkOrientation();
+
+  let scrollInterval;
+  let isScrolling = false;
+  function autoScrollIframe() {
+    const iframe = document.getElementById('fullscreenIframe');
+    const iframeDoc = iframe.contentWindow.document || iframe.contentDocument;
+
+    // 현재 스크롤 위치를 아래로 2px 이동
+    iframe.contentWindow.scrollBy(0, 2);
+
+    // iframe의 끝에 도달하면 스크롤 멈춤
+    if (iframe.contentWindow.scrollY + iframe.clientHeight >= iframeDoc.body.scrollHeight) {
+      stopScrolling();
+    }
+  }
+  function startScrolling() {
+    if (!isScrolling) {
+      scrollInterval = setInterval(autoScrollIframe, 10); // 10ms 간격으로 스크롤
+      isScrolling = true;
+      document.getElementById('scrollButton').src = "/assets/img/stop.png"
+    } else {
+      stopScrolling();
+    }
+  }
+
+  function stopScrolling() {
+    clearInterval(scrollInterval);
+    isScrolling = false;
+    document.getElementById('scrollButton').src = '/assets/img/play.png';
+  }
+  function resetScroll() {
+    fullscreenIframe.contentWindow.scrollTo(0, 0); // 스크롤을 처음 위치로 이동
+    stopScrolling();
+  }
+
+  document.getElementById('scrollButton').addEventListener('click', startScrolling);
+  document.getElementById('backButton').addEventListener('click', resetScroll);
+
 </script>
 
 <style>
-
     /* 가로 모드일 때 경고 메시지 */
     #landscapeWarning {
       display: none;
@@ -73,5 +127,36 @@
       top: 0;
       left: 0;
       z-index: 9999; /* 가장 위에 표시 */
+    }
+
+    .square01 {
+      width: 12%;
+      height: 25vh;
+      background-color: #000;
+      border: 1px solid #fff;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .child {
+      width: 100%;
+      height: 100%;
+      /* 상하좌우 정중앙 정렬하기 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -25px 0 0 -25px; /* 자식 요소 전체를 중앙 정렬하기 위해, 상단 및 왼쪽 margin을 마이너스 값으로 적용하기 */
+    }
+
+    
+    .child2 {
+      width: 100%;
+      height: 100%;
+      /* 상하좌우 정중앙 정렬하기 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -35px 0 0 -35px; /* 자식 요소 전체를 중앙 정렬하기 위해, 상단 및 왼쪽 margin을 마이너스 값으로 적용하기 */
     }
 </style>
