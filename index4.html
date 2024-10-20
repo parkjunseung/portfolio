@@ -841,6 +841,13 @@
             smoothScrolling: true
         });
 
+
+        skrollr.init({
+            mobileCheck: function() {
+                return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera);
+            }
+        });
+
         //휠스크롤시 
         function doWheel(e){
             if (allowed){
