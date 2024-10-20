@@ -55,23 +55,17 @@
   // 페이지 로드 시 초기 상태 확인
   checkOrientation();
 
-  let scrollInterval;
   let isScrolling = false;
-  function autoScrollIframe() {
-    const iframe = document.getElementById('fullscreenIframe');
-    const iframeDoc = iframe.contentWindow.document || iframe.contentDocument;
 
-    // 현재 스크롤 위치를 아래로 2px 이동
-    iframe.contentWindow.scrollBy(0, 2);
-
-    // iframe의 끝에 도달하면 스크롤 멈춤
-    if (iframe.contentWindow.scrollY + iframe.clientHeight >= iframeDoc.body.scrollHeight) {
-      stopScrolling();
-    }
+  function autoplay(dauer, lupopos) {
+    fullscreenIframe.contentWindow.skrollr.get().animateTo(lupopos, { duration: dauer}, {interruptible: true}); 
   }
+
   function startScrolling() {
     if (!isScrolling) {
-      scrollInterval = setInterval(autoScrollIframe, 10); // 10ms 간격으로 스크롤
+      const iframeDoc = fullscreenIframe.contentWindow.document || fullscreenIframe.contentDocument;
+      var iframeHeight = iframeDoc.body.scrollHeight;
+      autoplay(240000, iframeHeight);
       isScrolling = true;
       document.getElementById('scrollButton').src = "assets/img/stop.png"
     } else {
@@ -80,12 +74,12 @@
   }
 
   function stopScrolling() {
-    clearInterval(scrollInterval);
+    fullscreenIframe.contentWindow.skrollr.get().stopAnimateTo();
     isScrolling = false;
     document.getElementById('scrollButton').src = 'assets/img/play.png';
   }
   function resetScroll() {
-    fullscreenIframe.contentWindow.scrollTo(0, 0); // 스크롤을 처음 위치로 이동
+    fullscreenIframe.contentWindow.skrollr.get().setScrollTop(0); // 스크롤을 처음 위치로 이동
     stopScrolling();
   }
 
