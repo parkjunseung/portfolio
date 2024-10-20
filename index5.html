@@ -48,6 +48,11 @@
     }
   }
 
+  fullscreenIframe.contentWindow.addEventListener('wheel', () => {
+    stopScrolling()
+    resetInterval() 
+  });
+
   // 화면 회전 또는 창 크기 변경 감지
   window.addEventListener('resize', checkOrientation);
   window.addEventListener('orientationchange', checkOrientation);
@@ -61,22 +66,58 @@
     fullscreenIframe.contentWindow.skrollr.get().animateTo(lupopos, { duration: dauer}, {interruptible: true}); 
   }
 
+  let interval = null;
+
   function startScrolling() {
     if (!isScrolling) {
-      const iframeDoc = fullscreenIframe.contentWindow.document || fullscreenIframe.contentDocument;
-      var iframeHeight = iframeDoc.body.scrollHeight;
-      autoplay(180000, iframeHeight);
+      var iframeScrollTop =  fullscreenIframe.contentWindow.skrollr.get().getScrollTop();
+      var iframeHeight = fullscreenIframe.contentWindow.skrollr.get().getMaxScrollTop();
+
+      var scrollRatio = iframeScrollTop / Math.max(iframeHeight, 1); // 0으로 나누는 경우 방지
+      console.log(iframeScrollTop);
+      var maxDuration = 120000; // 최대 듀레이션(밀리초) - 3초
+
+      if (iframeScrollTop >= 9500) {
+        maxDuration = 60000;
+      } 
+      var duration = maxDuration * (1 - scrollRatio); // 남은 스크롤 거리에 비례한 듀레이션
+
+      console.log(`현재 스크롤 비율: ${(scrollRatio * 100).toFixed(2)}%`);
+      console.log(`계산된 듀레이션: ${duration.toFixed(0)}ms`);
+
+      autoplay(duration, iframeHeight);
       isScrolling = true;
       document.getElementById('scrollButton').src = "assets/img/stop.png"
+
+      let count = 0;
+
+      if (interval) {
+      } else  {
+        interval = setInterval(() => {
+          var iframeScrollTop =  fullscreenIframe.contentWindow.skrollr.get().getScrollTop();
+          var iframeHeight = fullscreenIframe.contentWindow.skrollr.get().getMaxScrollTop();
+          console.log(maxDuration);
+          if (iframeScrollTop >= 9500 && iframeScrollTop <= 11000) {
+            fullscreenIframe.contentWindow.skrollr.get().stopAnimateTo();
+            isScrolling = false;
+            startScrolling();
+          }
+          if (iframeScrollTop === iframeHeight) {
+            clearInterval(interval); // 5번 실행 후 멈춤
+            stopScrolling()
+          }
+        }, 1000);
+      }
     } else {
       stopScrolling();
     }
   }
 
   function stopScrolling() {
-    fullscreenIframe.contentWindow.skrollr.get().stopAnimateTo();
     isScrolling = false;
     document.getElementById('scrollButton').src = 'assets/img/play.png';
+    fullscreenIframe.contentWindow.skrollr.get().stopAnimateTo();
+    resetInterval() 
   }
   function resetScroll() {
     fullscreenIframe.contentWindow.skrollr.get().setScrollTop(0); // 스크롤을 처음 위치로 이동
@@ -92,7 +133,15 @@
   // 터치 시작
   touchArea.addEventListener('touchstart', (event) => {
     stopScrolling();
+    resetInterval() 
   });
+
+  function resetInterval() {
+    if (interval) { 
+      clearInterval(interval);
+      interval = null;
+    }
+  }
 
 </script>
 
