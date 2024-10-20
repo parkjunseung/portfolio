@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/style3.css">
     </head>
-<body>
+<body id="touchArea">
     <div id="landscapeWarning">세로 모드에서는 사용이 제한됩니다. <br>縦向きモードでは使用できません。<br>기기를 가로로 돌려주세요.<br>デバイスを横にしてください。</div>
     <div id="banner">
       <div style="display: flex; flex-direction: column; width: 100%;">
@@ -24,7 +24,7 @@
   
         </div>
       </div>
-      <iframe style="margin-left: 12%;" id="fullscreenIframe" src="https://parkjunseung.github.io/portfolio/index4.html"></iframe>
+      <iframe style="margin-left: 12%;" id="fullscreenIframe" src="http://127.0.0.1:5501/index4.html"></iframe>
     </div>
 </body>
 </html>
@@ -65,7 +65,7 @@
     if (!isScrolling) {
       const iframeDoc = fullscreenIframe.contentWindow.document || fullscreenIframe.contentDocument;
       var iframeHeight = iframeDoc.body.scrollHeight;
-      autoplay(240000, iframeHeight);
+      autoplay(180000, iframeHeight);
       isScrolling = true;
       document.getElementById('scrollButton').src = "assets/img/stop.png"
     } else {
@@ -85,6 +85,14 @@
 
   document.getElementById('scrollButton').addEventListener('click', startScrolling);
   document.getElementById('backButton').addEventListener('click', resetScroll);
+
+  //
+  const touchArea = document.getElementById('touchArea');
+
+  // 터치 시작
+  touchArea.addEventListener('touchstart', (event) => {
+    stopScrolling();
+  });
 
 </script>
 
