@@ -84,7 +84,7 @@
 
       console.log(`현재 스크롤 비율: ${(scrollRatio * 100).toFixed(2)}%`);
       console.log(`계산된 듀레이션: ${duration.toFixed(0)}ms`);
-debugger;
+
       autoplay(duration, iframeHeight);
       isScrolling = true;
       document.getElementById('scrollButton').src = "assets/img/stop.png"
@@ -135,15 +135,18 @@ debugger;
     document.getElementById('backButton').addEventListener('touchstart', resetScroll);
   } else {
     console.log("데스크탑 기기입니다.");
-
+    document.getElementById('scrollButton').addEventListener('click', startScrolling);
+    document.getElementById('backButton').addEventListener('click', resetScroll);
   }
   //
   const touchArea = document.getElementById('touchArea');
 
   // 터치 시작
   touchArea.addEventListener('touchstart', (event) => {
-    stopScrolling();
-    resetInterval() 
+    if(isScrolling) {
+      stopScrolling();
+      resetInterval(); 
+    }
   });
 
   function resetInterval() {
