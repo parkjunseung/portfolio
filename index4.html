@@ -325,8 +325,8 @@
                         <span>#ANDROID</span>
                         <span>#APP</span>
                         <span>#APPLE</span>
-                        <!-- <a href="https://github.com/parkjunseung/APIpage"  target="_blank">コードを見る</a> -->
-                        <a href="https://junseungpark.github.io/APIpage/pages/main.html" target="_blank">リンク</a>
+                        <a href="https://github.com/parkjunseung/flutter_restaurant"  target="_blank">コードを見る</a>
+                        <a href="https://github.com/parkjunseung/video_box" target="_blank">コードを見る</a>
                     </div>
                     <div class="text6 s2t">
                         <h3>PHP SITE</h3>
@@ -823,7 +823,7 @@
             "JavaScriptを初めて学んだときに作成したサイトです。JavaScriptに関する基本的な知識を整理して、このサイトを作りました。また、HTMLとCSSのリファレンスも作成し、レイアウトの理解を深めるために努力しました。",
             "JavaScriptフレームワークの一つであるREACT.JSで開発したポートフォリオサイトです。 ROUTERを利用したLINK機能と、コンポーネントを使ってシングルページを出力して作ったVUESITEです。 YOUTUBEとMOVIE。APIを利用したユーチューブ動画検索ページ及び映画リスト検索サイトをご覧いただけます。",
             "ウェブに関心が高かった私はウェブデザインを学ぶ過程で初めてコーディングに接するようになりました。 習ったこともない領域なので最初は概念が決まっていなくて難しかったが、毎日メモ帳にその日の授業をウェブ授業1日目、2日目のように書きながらネイバークラウドに保存して家でも復習しました。 そのように学んでいるうちにコーディングの魅力にはまってパブリッシャーという職業を知りました。",
-            "効果的に使用できるAPIを各ページごとに実装して作った簡単なポートフォリオです。 様々なAPIに触れながら、どのような機能があるのか直接確認して適用しながら、使い方を身につけることができたサイトです。",
+            "JavaScriptのほか、自己啓発のために学び始めたFlutterのコーディング練習の成果です。Flutterでは、状態管理ライブラリを使ってデータを保存・利用する方法を学び、最終的にアプリをビルドして実際に配布してみました。",
             "PHPを使用してサーバーでスクリプトと画面を具現し、MYSQL連動でDATABASEに会員管理と掲示物を保存するなど、基本的で動的なウェブサイトをコーディングしました。",
             "チームプロジェクトを通じて作ったサイトです。 UI/UX計画及び樹立からデザイン、ペーパープロトタイプなど多様なプロセスを経て製作しました。 個人的に好きなサッカーチームのファンサイトを製作してみました。 コミュニティ掲示板と選手たちのデートを直接見られるように製作しました。 未熟な部分も多かったですがその分学ぶ点も多いプロジェクトでした。",
             "ウェブ標準を遵守し、すべての機器に柔軟に対応する反応型サイトです。 SWIPERプラグインを適用してバナーとチャートタブ、イメージスライド、動画など多様で便利な機能を盛り込んだ企業型ウェブサイトで作業しました。"
@@ -832,7 +832,7 @@
             "https://parkjunseung.github.io/dothome2021/",
             "https://itlogoutvue.firebaseapp.com/",
             "https://parkjunportfolio.netlify.app/",
-            "https://junseungpark.github.io/APIpage/pages/main.html",
+            "https://github.com/parkjunseung/video_box",
             "http://dpfwl9393.dothome.co.kr/ilikesoccer/playerfourm/pages/main.php",
             "http://dpfwl9393.dothome.co.kr/ilikesoccer/playerfourm/pages/mainDesc.php",
             "https://parkjunseung.github.io/dothome2021/mega/index20.html",
@@ -934,28 +934,28 @@
                 });
 
                 if (entry.isIntersecting) {
-                revealAnim.set(container, {
-                    visibility: "visible",
-                });
-                revealAnim.fromTo(
-                    container,
-                    {
-                    clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
-                    webkitClipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"
-                    },
-                    {
-                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                    webkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-                    duration: 1,
-                    ease: easeInOut
-                    },
-                );
-                revealAnim.from(img, 4, {
-                    scale: 1.4,
-                    ease: easeInOut,
-                    delay: -1
-                });
-                self.unobserve(entry.target);
+                    revealAnim.set(container, {
+                        visibility: "visible",
+                    });
+                    revealAnim.fromTo(
+                        container,
+                        {
+                        clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+                        webkitClipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"
+                        },
+                        {
+                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                        webkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                        duration: 1,
+                        ease: easeInOut
+                        },
+                    );
+                    revealAnim.from(img, 4, {
+                        scale: 1.4,
+                        ease: easeInOut,
+                        delay: -1
+                    });
+                    self.unobserve(entry.target);
                 }
             });
         };

@@ -24,7 +24,7 @@
   
         </div>
       </div>
-      <iframe style="margin-left: 12%;" id="fullscreenIframe" src="https://parkjunseung.github.io/portfolio/index4.html"></iframe>
+      <iframe style="margin-left: 12%;" id="fullscreenIframe" src="http://127.0.0.1:5501/index4.html"></iframe>
     </div>
 </body>
 </html>
@@ -124,8 +124,21 @@
     stopScrolling();
   }
 
-  document.getElementById('scrollButton').addEventListener('click', startScrolling);
-  document.getElementById('backButton').addEventListener('click', resetScroll);
+  function isMobile() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod|android|blackberry|iemobile|opera mini/.test(userAgent);
+  }
+
+  if (isMobile()) {
+    console.log("모바일 기기입니다.");
+    document.getElementById('scrollButton').addEventListener('touchstart', startScrolling);
+    document.getElementById('backButton').addEventListener('touchstart', resetScroll);
+  } else {
+    console.log("데스크탑 기기입니다.");
+    document.getElementById('scrollButton').addEventListener('click', startScrolling);
+    document.getElementById('backButton').addEventListener('click', resetScroll);
+  }
+
 
   //
   const touchArea = document.getElementById('touchArea');
